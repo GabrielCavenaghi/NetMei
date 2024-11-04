@@ -68,6 +68,8 @@ O sistema deve ser compatível com o sistema operacional Windows 7
 
 
 # Histórias de Usuário
+———————————————————————————————————————————————————————————————
+
 ***Como*** MEI
 	
 ***Quero*** me cadastrar
@@ -84,11 +86,11 @@ O sistema deve ser compatível com o sistema operacional Windows 7
 
 ———————————————————————————————————————————————————————————————
 
-
 ***Como*** ADM
 	
 ***Quero*** gerenciar o software
 
 ***Para*** manter seu funcionamento
 
+———————————————————————————————————————————————————————————————
 # Protótipo
