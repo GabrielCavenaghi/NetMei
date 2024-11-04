@@ -68,6 +68,27 @@ O sistema deve ser compatível com o sistema operacional Windows 7
 
 
 # Histórias de Usuário
+***Como*** MEI
+	
+***Quero*** me cadastrar
 
+***Para*** gerenciar meu negócio e atrair clientes
+
+———————————————————————————————————————————————————————————————
+
+***Como*** Usuário
+	
+***Quero*** visualizar e descobrir serviços disponíveis
+
+***Para*** usufruir destes
+
+———————————————————————————————————————————————————————————————
+
+
+***Como*** ADM
+	
+***Quero*** gerenciar o software
+
+***Para*** manter seu funcionamento
 
 # Protótipo
