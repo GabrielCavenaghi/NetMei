@@ -1,0 +1,90 @@
+# Banco de dados base: Criação das tabelas, etc.
+
+/* NetMei: */
+
+CREATE TABLE usuario (
+    id_usuario INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(50),
+    senha VARCHAR(50),
+    telefone VARCHAR(50),
+    permissao VARCHAR(50)
+);
+
+CREATE TABLE produto (
+    id_produto INT AUTO_INCREMENT PRIMARY KEY,
+    nome_produto VARCHAR(50),
+    quantidade VARCHAR(100),
+    valor DECIMAL(10,2)
+);
+
+CREATE TABLE mei (
+    id_mei INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(50),
+    cnpj VARCHAR(50),
+    facebook VARCHAR(50),
+    instagram VARCHAR(50),
+    endereco VARCHAR(50)
+);
+
+CREATE TABLE categoria (
+    id_categoria INT AUTO_INCREMENT PRIMARY KEY,
+    categoria VARCHAR(50),
+    FK_mei_id_mei INT
+);
+
+CREATE TABLE mei_produto (
+    FK_mei_id_mei INT,
+    FK_produto_id_produto INT
+);
+
+CREATE TABLE usuario_mei (
+    FK_usuario_id_usuario INT,
+    FK_mei_id_mei INT
+);
+
+CREATE TABLE usuario_avalia_mei (
+    FK_usuario_id_usuario INT,
+    FK_mei_id_mei INT,
+    id_avaliacao INT AUTO_INCREMENT PRIMARY KEY,
+    data_avaliacao DATE,
+    avaliacao INT,
+    comentario VARCHAR(50)
+);
+ 
+ALTER TABLE categoria ADD CONSTRAINT FK_categoria_1
+    FOREIGN KEY (FK_mei_id_mei)
+    REFERENCES mei (id_mei)
+    ON DELETE CASCADE ON UPDATE CASCADE;
+ 
+ALTER TABLE mei_produto ADD CONSTRAINT FK_mei_produto_0
+    FOREIGN KEY (FK_mei_id_mei)
+    REFERENCES mei (id_mei)
+    ON DELETE SET NULL ON UPDATE CASCADE;
+ 
+ALTER TABLE mei_produto ADD CONSTRAINT FK_mei_produto_1
+    FOREIGN KEY (FK_produto_id_produto)
+    REFERENCES produto (id_produto)
+    ON DELETE SET NULL ON UPDATE CASCADE;
+ 
+ALTER TABLE usuario_mei ADD CONSTRAINT FK_usuario_mei_0
+    FOREIGN KEY (FK_usuario_id_usuario)
+    REFERENCES usuario (id_usuario)
+    ON DELETE RESTRICT ON UPDATE RESTRICT;
+ 
+ALTER TABLE usuario_mei ADD CONSTRAINT FK_usuario_mei_1
+    FOREIGN KEY (FK_mei_id_mei)
+    REFERENCES mei (id_mei)
+    ON DELETE SET NULL ON UPDATE CASCADE;
+ 
+ALTER TABLE usuario_avalia_mei ADD CONSTRAINT FK_usuario_avalia_mei_1
+    FOREIGN KEY (FK_usuario_id_usuario)
+    REFERENCES usuario (id_usuario)
+    ON DELETE RESTRICT ON UPDATE RESTRICT;
+ 
+ALTER TABLE usuario_avalia_mei ADD CONSTRAINT FK_usuario_avalia_mei_2
+    FOREIGN KEY (FK_mei_id_mei)
+    REFERENCES mei (id_mei)
+    ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+
+## Mais atualizações serão feitas, como triggers e outras funcionalidades.
