@@ -24,7 +24,7 @@ O sistema deverá permitir que o MEI visualize seu perfil da maneira como será 
 
 O sistema deve permitir que o MEI cadastre as suas redes sociais para maior visibilidade.
 
-* ***Gerenciamento de Estoque***
+* ***Gerenciamento de Estoque*** 
 
 O sistema deve permitir que o MEI cadastre produtos com quantidade de estoque disponível.
 
@@ -43,6 +43,7 @@ O sistema deve permitir que o público avalie os serviços ou produtos oferecido
 O sistema deve permitir que os usuários entrem em contato diretamente com o MEI através de meios de comunicação cadastrados (e-mail, telefone, WhatsApp).
 
 O sistema deve permitir que os MEIs enviem ofertas ou promoções diretamente para os usuários que optarem por receber notificações.
+
 * ***Sistema de Notificações***
 
 O sistema deve enviar notificações ao MEI sobre atualizações de perfil, avaliações recebidas, movimentações de estoque e possíveis contatos de usuários.
@@ -70,6 +71,8 @@ O sistema deve ser compatível com o sistema operacional Windows 7
 # Histórias de Usuário
 ———————————————————————————————————————————————————————————————
 
+Responsável: Gabriel de Oliveira
+
 ***Como*** MEI
 	
 ***Quero*** me cadastrar
@@ -78,6 +81,8 @@ O sistema deve ser compatível com o sistema operacional Windows 7
 
 ———————————————————————————————————————————————————————————————
 
+Responsável: Guilherme Pelegrini e Thiago Borges
+
 ***Como*** Usuário
 	
 ***Quero*** visualizar e descobrir serviços disponíveis
@@ -85,6 +90,8 @@ O sistema deve ser compatível com o sistema operacional Windows 7
 ***Para*** usufruir destes
 
 ———————————————————————————————————————————————————————————————
+
+Responsável: Daniel Junior
 
 ***Como*** ADM
 	
