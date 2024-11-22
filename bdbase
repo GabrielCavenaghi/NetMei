@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 22-Nov-2024 às 15:36
--- Versão do servidor: 10.4.22-MariaDB
--- versão do PHP: 8.1.0
+-- Tempo de geração: 22/11/2024 às 18:51
+-- Versão do servidor: 10.4.32-MariaDB
+-- Versão do PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,54 +24,53 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `categoria`
+-- Estrutura para tabela `categoria`
 --
 
 CREATE TABLE `categoria` (
   `id_categoria` int(11) NOT NULL,
   `categoria` varchar(50) DEFAULT NULL,
   `FK_mei_id_mei` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `mei`
+-- Estrutura para tabela `mei`
 --
 
 CREATE TABLE `mei` (
   `id_mei` int(11) NOT NULL,
-  `nome` varchar(50) DEFAULT NULL,
   `cnpj` varchar(50) DEFAULT NULL,
   `facebook` varchar(50) DEFAULT NULL,
   `instagram` varchar(50) DEFAULT NULL,
   `endereco` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `mei_produto`
+-- Estrutura para tabela `mei_produto`
 --
 
 CREATE TABLE `mei_produto` (
   `FK_mei_id_mei` int(11) DEFAULT NULL,
   `FK_produto_id_produto` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `permissao`
+-- Estrutura para tabela `permissao`
 --
 
 CREATE TABLE `permissao` (
   `id_permissao` int(11) NOT NULL,
   `permissao` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `permissao`
+-- Despejando dados para a tabela `permissao`
 --
 
 INSERT INTO `permissao` (`id_permissao`, `permissao`) VALUES
@@ -82,7 +81,7 @@ INSERT INTO `permissao` (`id_permissao`, `permissao`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `produto`
+-- Estrutura para tabela `produto`
 --
 
 CREATE TABLE `produto` (
@@ -90,12 +89,12 @@ CREATE TABLE `produto` (
   `nome_produto` varchar(50) DEFAULT NULL,
   `quantidade` varchar(100) DEFAULT NULL,
   `valor` decimal(10,2) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `usuario`
+-- Estrutura para tabela `usuario`
 --
 
 CREATE TABLE `usuario` (
@@ -104,22 +103,26 @@ CREATE TABLE `usuario` (
   `email` varchar(50) DEFAULT NULL,
   `senha` varchar(50) DEFAULT NULL,
   `telefone` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `usuario`
+-- Despejando dados para a tabela `usuario`
 --
 
 INSERT INTO `usuario` (`id_usuario`, `nome`, `email`, `senha`, `telefone`) VALUES
 (1, 'Guelerme', 'guelerme@gmail.com', '123', '19 9990323-71'),
 (3, 'Thigas', 'thigas@gmail.com', '123', '4002-8922'),
 (9, 'Daniel', 'daniel@gmail.com', '123', '19 996727980'),
-(22, 'Roberto', 'roberto@gmail.com', '123', '19 999546567');
+(22, 'Roberto', 'roberto@gmail.com', '123', '19 999546567'),
+(23, 'Raul', 'raul@gmail.com', '123', '192491295'),
+(24, 'Gabriel', 'gabriel@gmail.com', '123', '1912524'),
+(25, 'Yslan', 'yslan@gmail.com', '123', '129838125'),
+(26, 'Pedro', 'pedro@gmail.com', '123', '125981982');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `usuario_avalia_mei`
+-- Estrutura para tabela `usuario_avalia_mei`
 --
 
 CREATE TABLE `usuario_avalia_mei` (
@@ -129,82 +132,86 @@ CREATE TABLE `usuario_avalia_mei` (
   `data_avaliacao` date DEFAULT NULL,
   `avaliacao` int(11) DEFAULT NULL,
   `comentario` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `usuario_mei`
+-- Estrutura para tabela `usuario_mei`
 --
 
 CREATE TABLE `usuario_mei` (
   `FK_usuario_id_usuario` int(11) DEFAULT NULL,
   `FK_mei_id_mei` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `usuario_permissao`
+-- Estrutura para tabela `usuario_permissao`
 --
 
 CREATE TABLE `usuario_permissao` (
   `id_relacao` int(11) NOT NULL,
   `id_usuario_id` int(11) NOT NULL,
   `id_permissao_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `usuario_permissao`
+-- Despejando dados para a tabela `usuario_permissao`
 --
 
 INSERT INTO `usuario_permissao` (`id_relacao`, `id_usuario_id`, `id_permissao_id`) VALUES
-(2, 22, 2);
+(2, 22, 2),
+(3, 23, 1),
+(4, 24, 2),
+(5, 25, 1),
+(6, 26, 2);
 
 --
 -- Índices para tabelas despejadas
 --
 
 --
--- Índices para tabela `categoria`
+-- Índices de tabela `categoria`
 --
 ALTER TABLE `categoria`
   ADD PRIMARY KEY (`id_categoria`),
   ADD KEY `FK_categoria_1` (`FK_mei_id_mei`);
 
 --
--- Índices para tabela `mei`
+-- Índices de tabela `mei`
 --
 ALTER TABLE `mei`
   ADD PRIMARY KEY (`id_mei`);
 
 --
--- Índices para tabela `mei_produto`
+-- Índices de tabela `mei_produto`
 --
 ALTER TABLE `mei_produto`
   ADD KEY `FK_mei_produto_0` (`FK_mei_id_mei`),
   ADD KEY `FK_mei_produto_1` (`FK_produto_id_produto`);
 
 --
--- Índices para tabela `permissao`
+-- Índices de tabela `permissao`
 --
 ALTER TABLE `permissao`
   ADD PRIMARY KEY (`id_permissao`);
 
 --
--- Índices para tabela `produto`
+-- Índices de tabela `produto`
 --
 ALTER TABLE `produto`
   ADD PRIMARY KEY (`id_produto`);
 
 --
--- Índices para tabela `usuario`
+-- Índices de tabela `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`id_usuario`);
 
 --
--- Índices para tabela `usuario_avalia_mei`
+-- Índices de tabela `usuario_avalia_mei`
 --
 ALTER TABLE `usuario_avalia_mei`
   ADD PRIMARY KEY (`id_avaliacao`),
@@ -212,14 +219,14 @@ ALTER TABLE `usuario_avalia_mei`
   ADD KEY `FK_usuario_avalia_mei_2` (`FK_mei_id_mei`);
 
 --
--- Índices para tabela `usuario_mei`
+-- Índices de tabela `usuario_mei`
 --
 ALTER TABLE `usuario_mei`
   ADD KEY `FK_usuario_mei_0` (`FK_usuario_id_usuario`),
   ADD KEY `FK_usuario_mei_1` (`FK_mei_id_mei`);
 
 --
--- Índices para tabela `usuario_permissao`
+-- Índices de tabela `usuario_permissao`
 --
 ALTER TABLE `usuario_permissao`
   ADD PRIMARY KEY (`id_relacao`),
@@ -227,7 +234,7 @@ ALTER TABLE `usuario_permissao`
   ADD KEY `FK_permissao` (`id_permissao_id`);
 
 --
--- AUTO_INCREMENT de tabelas despejadas
+-- AUTO_INCREMENT para tabelas despejadas
 --
 
 --
@@ -258,7 +265,7 @@ ALTER TABLE `produto`
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT de tabela `usuario_avalia_mei`
@@ -270,41 +277,41 @@ ALTER TABLE `usuario_avalia_mei`
 -- AUTO_INCREMENT de tabela `usuario_permissao`
 --
 ALTER TABLE `usuario_permissao`
-  MODIFY `id_relacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_relacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- Restrições para despejos de tabelas
+-- Restrições para tabelas despejadas
 --
 
 --
--- Limitadores para a tabela `categoria`
+-- Restrições para tabelas `categoria`
 --
 ALTER TABLE `categoria`
   ADD CONSTRAINT `FK_categoria_1` FOREIGN KEY (`FK_mei_id_mei`) REFERENCES `mei` (`id_mei`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Limitadores para a tabela `mei_produto`
+-- Restrições para tabelas `mei_produto`
 --
 ALTER TABLE `mei_produto`
   ADD CONSTRAINT `FK_mei_produto_0` FOREIGN KEY (`FK_mei_id_mei`) REFERENCES `mei` (`id_mei`) ON DELETE SET NULL ON UPDATE CASCADE,
   ADD CONSTRAINT `FK_mei_produto_1` FOREIGN KEY (`FK_produto_id_produto`) REFERENCES `produto` (`id_produto`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 --
--- Limitadores para a tabela `usuario_avalia_mei`
+-- Restrições para tabelas `usuario_avalia_mei`
 --
 ALTER TABLE `usuario_avalia_mei`
   ADD CONSTRAINT `FK_usuario_avalia_mei_1` FOREIGN KEY (`FK_usuario_id_usuario`) REFERENCES `usuario` (`id_usuario`),
   ADD CONSTRAINT `FK_usuario_avalia_mei_2` FOREIGN KEY (`FK_mei_id_mei`) REFERENCES `mei` (`id_mei`);
 
 --
--- Limitadores para a tabela `usuario_mei`
+-- Restrições para tabelas `usuario_mei`
 --
 ALTER TABLE `usuario_mei`
   ADD CONSTRAINT `FK_usuario_mei_0` FOREIGN KEY (`FK_usuario_id_usuario`) REFERENCES `usuario` (`id_usuario`),
   ADD CONSTRAINT `FK_usuario_mei_1` FOREIGN KEY (`FK_mei_id_mei`) REFERENCES `mei` (`id_mei`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 --
--- Limitadores para a tabela `usuario_permissao`
+-- Restrições para tabelas `usuario_permissao`
 --
 ALTER TABLE `usuario_permissao`
   ADD CONSTRAINT `FK_permissao` FOREIGN KEY (`id_permissao_id`) REFERENCES `permissao` (`id_permissao`),
