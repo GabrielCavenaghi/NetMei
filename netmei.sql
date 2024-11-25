@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 25-Nov-2024 às 11:29
+-- Tempo de geração: 25-Nov-2024 às 11:51
 -- Versão do servidor: 10.4.22-MariaDB
 -- versão do PHP: 8.1.0
 
@@ -88,6 +88,26 @@ CREATE TABLE `mei_produto` (
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `permissao`
+--
+
+CREATE TABLE `permissao` (
+  `id_permissao` int(11) NOT NULL,
+  `permissao` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `permissao`
+--
+
+INSERT INTO `permissao` (`id_permissao`, `permissao`) VALUES
+(1, 'mei'),
+(2, 'user'),
+(3, 'adm');
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `produto`
 --
 
@@ -109,9 +129,16 @@ CREATE TABLE `usuario` (
   `Nome` varchar(100) NOT NULL,
   `email` varchar(50) DEFAULT NULL,
   `senha` varchar(50) DEFAULT NULL,
-  `telefone` varchar(50) DEFAULT NULL,
-  `permissao` varchar(50) DEFAULT NULL
+  `telefone` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `usuario`
+--
+
+INSERT INTO `usuario` (`id_usuario`, `Nome`, `email`, `senha`, `telefone`) VALUES
+(3, 'Thiago', 'thigas@gmail.com', '123', '19 998602493'),
+(4, 'Guilherme', 'guelerme@gmail.com', '123', '18238152');
 
 -- --------------------------------------------------------
 
@@ -139,6 +166,26 @@ CREATE TABLE `usuario_mei` (
   `FK_mei_id_mei` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `usuario_permissao`
+--
+
+CREATE TABLE `usuario_permissao` (
+  `id_relacao` int(11) NOT NULL,
+  `id_permissao_id` int(11) NOT NULL,
+  `id_usuario_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `usuario_permissao`
+--
+
+INSERT INTO `usuario_permissao` (`id_relacao`, `id_permissao_id`, `id_usuario_id`) VALUES
+(1, 2, 3),
+(2, 1, 4);
+
 --
 -- Índices para tabelas despejadas
 --
@@ -162,6 +209,12 @@ ALTER TABLE `mei`
 ALTER TABLE `mei_produto`
   ADD KEY `FK_mei_produto_0` (`FK_mei_id_mei`),
   ADD KEY `FK_mei_produto_1` (`FK_produto_id_produto`);
+
+--
+-- Índices para tabela `permissao`
+--
+ALTER TABLE `permissao`
+  ADD PRIMARY KEY (`id_permissao`);
 
 --
 -- Índices para tabela `produto`
@@ -191,6 +244,14 @@ ALTER TABLE `usuario_mei`
   ADD KEY `FK_usuario_mei_1` (`FK_mei_id_mei`);
 
 --
+-- Índices para tabela `usuario_permissao`
+--
+ALTER TABLE `usuario_permissao`
+  ADD PRIMARY KEY (`id_relacao`),
+  ADD KEY `FK_usuario_permissao` (`id_usuario_id`),
+  ADD KEY `FK_permissao` (`id_permissao_id`);
+
+--
 -- AUTO_INCREMENT de tabelas despejadas
 --
 
@@ -207,6 +268,12 @@ ALTER TABLE `mei`
   MODIFY `id_mei` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT de tabela `permissao`
+--
+ALTER TABLE `permissao`
+  MODIFY `id_permissao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT de tabela `produto`
 --
 ALTER TABLE `produto`
@@ -216,13 +283,19 @@ ALTER TABLE `produto`
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `usuario_avalia_mei`
 --
 ALTER TABLE `usuario_avalia_mei`
   MODIFY `id_avaliacao` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de tabela `usuario_permissao`
+--
+ALTER TABLE `usuario_permissao`
+  MODIFY `id_relacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restrições para despejos de tabelas
@@ -254,8 +327,16 @@ ALTER TABLE `usuario_avalia_mei`
 ALTER TABLE `usuario_mei`
   ADD CONSTRAINT `FK_usuario_mei_0` FOREIGN KEY (`FK_usuario_id_usuario`) REFERENCES `usuario` (`id_usuario`),
   ADD CONSTRAINT `FK_usuario_mei_1` FOREIGN KEY (`FK_mei_id_mei`) REFERENCES `mei` (`id_mei`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+--
+-- Limitadores para a tabela `usuario_permissao`
+--
+ALTER TABLE `usuario_permissao`
+  ADD CONSTRAINT `FK_permissao` FOREIGN KEY (`id_permissao_id`) REFERENCES `permissao` (`id_permissao`),
+  ADD CONSTRAINT `FK_usuario_permissao` FOREIGN KEY (`id_usuario_id`) REFERENCES `usuario` (`id_usuario`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
