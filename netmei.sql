@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 25-Nov-2024 às 11:51
+-- Tempo de geração: 25-Nov-2024 às 12:11
 -- Versão do servidor: 10.4.22-MariaDB
 -- versão do PHP: 8.1.0
 
@@ -138,7 +138,8 @@ CREATE TABLE `usuario` (
 
 INSERT INTO `usuario` (`id_usuario`, `Nome`, `email`, `senha`, `telefone`) VALUES
 (3, 'Thiago', 'thigas@gmail.com', '123', '19 998602493'),
-(4, 'Guilherme', 'guelerme@gmail.com', '123', '18238152');
+(4, 'Guilherme', 'guelerme@gmail.com', '123', '18238152'),
+(5, 'Daniel', 'daniel@gmail.com', '123', '19243892185');
 
 -- --------------------------------------------------------
 
@@ -184,7 +185,8 @@ CREATE TABLE `usuario_permissao` (
 
 INSERT INTO `usuario_permissao` (`id_relacao`, `id_permissao_id`, `id_usuario_id`) VALUES
 (1, 2, 3),
-(2, 1, 4);
+(2, 1, 4),
+(3, 3, 5);
 
 --
 -- Índices para tabelas despejadas
@@ -283,7 +285,7 @@ ALTER TABLE `produto`
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `usuario_avalia_mei`
@@ -295,7 +297,7 @@ ALTER TABLE `usuario_avalia_mei`
 -- AUTO_INCREMENT de tabela `usuario_permissao`
 --
 ALTER TABLE `usuario_permissao`
-  MODIFY `id_relacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_relacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Restrições para despejos de tabelas
