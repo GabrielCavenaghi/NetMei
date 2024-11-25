@@ -104,6 +104,9 @@
     <EmbeddedResource Include="Tela_Cadastro.resx">
       <DependentUpon>Tela_Cadastro.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Tela_ConfigUser_Mei.resx">
+      <DependentUpon>Tela_ConfigUser_Mei.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Tela_ConfigUser_Usuario.resx">
       <DependentUpon>Tela_ConfigUser_Usuario.cs</DependentUpon>
     </EmbeddedResource>

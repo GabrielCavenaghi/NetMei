@@ -59,3 +59,5 @@ D:\DS\NetMei\obj\Debug\NetMei.csproj.CoreCompileInputs.cache
 D:\DS\NetMei\obj\Debug\NetMei.csproj.Up2Date
 D:\DS\NetMei\obj\Debug\NetMei.exe
 D:\DS\NetMei\obj\Debug\NetMei.pdb
+F:\DS\NetMei\obj\Debug\NetMei.Tela_ConfigUser_Mei.resources
+F:\DS\NetMei\obj\Debug\NetMei.Tela_Menu_Usuario.resources
