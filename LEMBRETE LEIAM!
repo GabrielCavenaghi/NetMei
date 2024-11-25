@@ -1,6 +1,0 @@
-## FAVOR SEMPRE ATUALIZAR E CHECAR A DATA DOS ARQUIVOS, AVISEM QUALQUER ALTERAÇÃO NO GRUPO.
-
-**Não encontrei outro jeito para atualizar C#, qualquer alteração no banco de dados apenas dar CTRL C + CTRL V no arquivo já existente, não precisa subir outra FILE igual o C# precisa.**
-
-- O github já mantem as linhas e só adiciona o novo (isso pro banco de dados que é so um copy paste), C# é mais complicado pois tem arquivos executáveis e outros.
-(não é só reescrever a pasta atual do NetMei com a pasta que você fez as atualizações?)
