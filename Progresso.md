@@ -6,6 +6,6 @@ Tela Cadastro - COMPLETA, Guilherme Henrique e Thiago
 
 Tela Menu Usuário - COMEÇANDO, Guilherme Henrique e Thiago
 
-Tela de Cadastro de Mei - COMEÇANDO, Gabriel
+Tela de Cadastro de Mei - COMPLETO, Gabriel
 
 Telas de controle do ADM - COMEÇANDO, Daniel
