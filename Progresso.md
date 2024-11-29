@@ -8,4 +8,6 @@ Tela Menu Usuário - COMEÇANDO, Guilherme Henrique e Thiago
 
 Tela de Cadastro de Mei - COMPLETO, Gabriel
 
+Tela de Cadastro de produtos do MEI - COMPLETO, Gabriel
+
 Telas de controle do ADM - COMEÇANDO, Daniel
