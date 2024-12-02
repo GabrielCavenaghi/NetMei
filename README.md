@@ -87,7 +87,7 @@ Responsável: Guilherme Pelegrini e Thiago Borges
 	
 ***Quero*** visualizar e descobrir serviços disponíveis
 
-***Para*** usufruir destes
+***Para***  satisfazer o que preciso/procuro
 
 ———————————————————————————————————————————————————————————————
 
