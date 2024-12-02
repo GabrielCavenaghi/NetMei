@@ -14,8 +14,6 @@ Deixar mais dinâmico e facilitar a forma com que os MEIs gerenciam seus serviç
 
 O sistema deve permitir que o MEI se cadastre inserindo informações básicas como nome, CNPJ, área de atuação, endereço, telefone e e-mail.
 
-O MEI poderá cadastrar seu portfólio de produtos ou serviços, incluindo descrição, imagens e preços.
-
 O MEI poderá editar seus dados de perfil e portfólio a qualquer momento.
 
 O sistema deve permitir que o MEI informe seus horários de atendimento e meios de contato.
@@ -28,14 +26,11 @@ O sistema deve permitir que o MEI cadastre as suas redes sociais para maior visi
 
 O sistema deve permitir que o MEI cadastre produtos com quantidade de estoque disponível.
 
-O sistema deve notificar o MEI quando o estoque de um produto estiver baixo (por exemplo, abaixo de uma quantidade mínima definida pelo MEI)
-
-O MEI poderá gerenciar entradas e saídas de estoque manualmente.
 * ***Busca e Visibilidade dos MEIs***
 
 O sistema deve permitir que os usuários realizem buscas por MEIs filtrando por área de atuação, localização e outros critérios relevantes.
 
-O sistema deve exibir um perfil público do MEI com as informações cadastradas, como portfólio de produtos ou serviços.
+O sistema deve exibir um perfil público do MEI com as informações cadastradas.
 
 O sistema deve permitir que o público avalie os serviços ou produtos oferecidos pelos MEIs, com sistema de classificação por estrelas e comentários.
 * ***Comunicação***
@@ -56,8 +51,6 @@ O sistema deve permitir que o usuário configure as notificações que deseja re
 
 O sistema deve ser intuitivo e fácil de navegar, com telas simplificadas e um design amigável para o usuário final.
 Segurança
-
-O sistema deve implementar autenticação de dois fatores para o acesso ao painel do MEI.
 
 O sistema deve garantir a integridade dos dados, impedindo acessos indevidos e fraudes.
 Escalabilidade
