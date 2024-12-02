@@ -14,7 +14,7 @@ Deixar mais dinâmico e facilitar a forma com que os MEIs gerenciam seus serviç
 
 O sistema deve permitir que o MEI se cadastre inserindo informações básicas como nome, CNPJ, área de atuação, endereço, telefone e e-mail.
 
-O MEI poderá editar seus dados de perfil e portfólio a qualquer momento.
+O MEI poderá editar seus dados de perfil a qualquer momento.
 
 O sistema deve permitir que o MEI cadastre as suas redes sociais para maior visibilidade.
 
