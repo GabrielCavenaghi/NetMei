@@ -65,7 +65,7 @@ Escalabilidade
 O sistema deve ser capaz de expandir sua infraestrutura para suportar até 1.000 MEIs cadastrados sem perda de desempenho.
 Compatibilidade
 
-O sistema deve ser compatível com o sistema operacional Windows 7
+O sistema deve ser compatível com o sistema operacional Windows 7 e 10
 
 
 # Histórias de Usuário
