@@ -16,15 +16,13 @@ O sistema deve permitir que o MEI se cadastre inserindo informações básicas c
 
 O MEI poderá editar seus dados de perfil e portfólio a qualquer momento.
 
-O sistema deve permitir que o MEI informe seus horários de atendimento e meios de contato.
-
-O sistema deverá permitir que o MEI visualize seu perfil da maneira como será exibido ao público.
-
 O sistema deve permitir que o MEI cadastre as suas redes sociais para maior visibilidade.
 
 * ***Gerenciamento de Estoque*** 
 
 O sistema deve permitir que o MEI cadastre produtos com quantidade de estoque disponível.
+
+O sistema deve permitir que o MEI cadastre produtos com o valor do produto.
 
 * ***Busca e Visibilidade dos MEIs***
 
